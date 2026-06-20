@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Certificates</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            emeraldDeep: {
+              950: '#02140d',
+              900: '#041b12',
+              800: '#07261a',
+              700: '#0b3524',
+              600: '#0f4a32',
+              500: '#11b56b'
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(16,185,129,0.18), 0 20px 80px rgba(0,0,0,0.45), 0 0 40px rgba(16,185,129,0.12)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .certificate-card {
+      transition: all .35s ease;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: rgba(16,185,129,.35);
+      box-shadow: 0 0 0 1px rgba(16,185,129,.15), 0 25px 80px rgba(0,0,0,.45);
+    }
+
+    .certificate-preview {
+      cursor: pointer;
+      transition: all .35s ease;
+    }
+
+    .certificate-preview:hover {
+      transform: scale(1.03);
+    }
+
+    .filter-btn.active {
+      background: rgb(74 222 128);
+      color: black;
+    }
+
+    .modal-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #certificateModal {
+      transition: all .3s ease;
+    }
+
+    #certificateModal img {
+      transition: all .3s ease;
+    }
+  </style>
+</head>
+
+<body class="font-sans selection:bg-emerald-400/30 selection:text-white">
+
+<div class="fixed inset-0 pointer-events-none grid-bg opacity-30"></div>
+
+<header class="sticky top-0 z-40 border-b border-white/8 bg-black/25 backdrop-blur-xl">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between py-4">
+
+      <a href="index.html" class="text-left">
+        <div class="text-lg md:text-xl font-semibold tracking-tight">
+          Tayyaba Shaikh
+        </div>
+        <div class="text-xs text-emerald-200/70">
+          Frontend Developer • Content Writer • BSc IT
+        </div>
+      </a>
+
+      <nav class="flex flex-wrap items-center justify-end gap-4 md:gap-7 text-sm text-emerald-50/80">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="skills.html">Skills</a>
+        <a class="nav-link" href="journey.html">Journey</a>
+        <a class="nav-link" href="facts.html">Facts</a>
+        <a class="nav-link" href="links.html">Links</a>
+        <a class="nav-link" href="blogs.html">Blogs</a>
+        <a class="nav-link" href="certificates.html">Certificates</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+
+  <div class="reveal text-center mb-12">
+    <div class="text-sm uppercase tracking-[0.3em] text-emerald-200/60">
+      Certificates
+    </div>
+
+    <h2 class="mt-3 text-3xl md:text-5xl font-semibold tracking-tight">
+      Certifications, Internships & Experience Letters
+    </h2>
+
+    <p class="mt-4 text-emerald-50/70 max-w-2xl mx-auto">
+      A collection of internship selection certificates, professional experience letters, and completion certificates.
+    </p>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-3 mb-16">
+    <button class="filter-btn active px-5 py-2 rounded-full border border-white/10 bg-white/5" data-filter="all">
+      All
+    </button>
+
+    <button class="filter-btn px-5 py-2 rounded-full border border-white/10 bg-white/5" data-filter="internship">
+      Internship
+    </button>
+
+    <button class="filter-btn px-5 py-2 rounded-full border border-white/10 bg-white/5" data-filter="experience">
+      Experience
+    </button>
+
+    <button class="filter-btn px-5 py-2 rounded-full border border-white/10 bg-white/5" data-filter="completion">
+      Completion
+    </button>
+  </div>
+
+
+
+  <div class="certificate-section mt-20" data-category="experience">
+
+    <div class="mb-8">
+      <h3 class="text-2xl md:text-3xl font-semibold">
+        Experience Letter
+      </h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      <div class="certificate-card reveal glass rounded-[2rem] p-5 border border-white/8">
+        <div onclick="openModal(this)" class="certificate-preview aspect-[4/3] rounded-[1.25rem] border border-white/10 bg-white/5 overflow-hidden">
+          <img src="images/experience.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <h4 class="mt-4 text-xl font-semibold">
+          Experience Letter
+        </h4>
+
+        <p class="mt-2 text-emerald-50/70">
+          Professional Experience Letter
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="certificate-section" data-category="internship">
+
+    <div class="mb-8">
+      <h3 class="text-2xl md:text-3xl font-semibold">
+        Internship Selection Certificates
+      </h3>
+
+      <p class="mt-2 text-emerald-50/60">
+        6 Internship Selection Certificates
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      <div class="certificate-card reveal glass rounded-[2rem] p-5 border border-white/8">
+        <div onclick="openModal(this)" class="certificate-preview aspect-[4/3] rounded-[1.25rem] border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden">
+          <img src="images/internship1.jpg" alt="" class="w-full h-full object-cover">
+        </div>
+
+        <h4 class="mt-4 text-xl font-semibold">
+          Internship Certificate 01
+        </h4>
+
+        <p class="mt-2 text-emerald-50/70">
+          Internship Selection Certificate
+        </p>
+      </div>
+
+      <div class="certificate-card reveal glass rounded-[2rem] p-5 border border-white/8">
+        <div onclick="openModal(this)" class="certificate-preview aspect-[4/3] rounded-[1.25rem] border border-white/10 bg-white/5 overflow-hidden">
+          <img src="images/internship2.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <h4 class="mt-4 text-xl font-semibold">
+          Internship Certificate 02
+        </h4>
+
+        <p class="mt-2 text-emerald-50/70">
+          Internship Selection Certificate
+        </p>
+      </div>
+
+      <div class="certificate-card reveal glass rounded-[2rem] p-5 border border-white/8">
+        <div onclick="openModal(this)" class="certificate-preview aspect-[4/3] rounded-[1.25rem] border border-white/10 bg-white/5 overflow-hidden">
+          <img src="images/internship3.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <h4 class="mt-4 text-xl font-semibold">
+          Internship Certificate 03
+        </h4>
+
+        <p class="mt-2 text-emerald-50/70">
+          Internship Selection Certificate
+        </p>
+      </div>
+
+      <div class="certificate-card reveal glass rounded-[2rem] p-5 border border-white/8">
+        <div onclick="openModal(this)" class="certificate-preview aspect-[4/3] rounded-[1.25rem] border border-white/10 bg-white/5 overflow-hidden">
+          <img src="images/internship4.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <h4 class="mt-4 text-xl font-semibold">
+          Internship Certificate 04
+        </h4>
+
+        <p class="mt-2 text-emerald-50/70">
+          Internship Selection Certificate
+        </p>
+      </div>
+
+      <div class="certificate-card reveal glass rounded-[2rem] p-5 border border-white/8">
+        <div onclick="openModal(this)" class="certificate-preview aspect-[4/3] rounded-[1.25rem] border border-white/10 bg-white/5 overflow-hidden">
+          <img src="images/internship5.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <h4 class="mt-4 text-xl font-semibold">
+          Internship Certificate 05
+        </h4>
+
+        <p class="mt-2 text-emerald-50/70">
+          Internship Selection Certificate
+        </p>
+      </div>
+      <div class="certificate-card reveal glass rounded-[2rem] p-5 border border-white/8">
+        <div onclick="openModal(this)" class="certificate-preview aspect-[4/3] rounded-[1.25rem] border border-white/10 bg-white/5 overflow-hidden">
+          <img src="images/internship6.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <h4 class="mt-4 text-xl font-semibold">
+          Internship Certificate 06
+        </h4>
+
+        <p class="mt-2 text-emerald-50/70">
+          Internship Selection Certificate
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="certificate-section mt-20" data-category="completion">
+
+    <div class="mb-8">
+      <h3 class="text-2xl md:text-3xl font-semibold">
+        Certificate of Completion
+      </h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      <div class="certificate-card reveal glass rounded-[2rem] p-5 border border-white/8">
+        <div onclick="openModal(this)" class="certificate-preview aspect-[4/3] rounded-[1.25rem] border border-white/10 bg-white/5 overflow-hidden">
+          <img src="images/completion.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <h4 class="mt-4 text-xl font-semibold">
+          Certificate of Completion
+        </h4>
+
+        <p class="mt-2 text-emerald-50/70">
+          Certificate of Completion
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<div id="certificateModal"
+     class="fixed inset-0 z-50 bg-black/90 backdrop-blur-lg flex items-center justify-center p-6 modal-hidden">
+
+  <button
+    onclick="closeModal()"
+    class="absolute top-6 right-6 text-4xl text-white hover:text-emerald-300">
+    ×
+  </button>
+
+  <img
+    id="modalImage"
+    src=""
+    class="max-w-full max-h-[90vh] rounded-3xl border border-white/10 shadow-2xl">
+</div>
+
+<script>
+
+const buttons = document.querySelectorAll('.filter-btn');
+const sections = document.querySelectorAll('.certificate-section');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    sections.forEach(section => {
+
+      if (
+        filter === 'all' ||
+        section.dataset.category === filter
+      ) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+
+    });
+
+  });
+});
+
+const modal = document.getElementById('certificateModal');
+const modalImage = document.getElementById('modalImage');
+
+function openModal(el) {
+  const img = el.querySelector('img');
+
+  modalImage.src = img.src;
+  modal.classList.remove('modal-hidden');
+  modal.classList.add('modal-open');
+}
+
+function closeModal() {
+  modal.classList.remove('modal-open');
+  modal.classList.add('modal-hidden');
+}
+
+modal.addEventListener('click', e => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+
+</script>
+
+<script src="main.js"></script>
+
+</body>
+</html>
