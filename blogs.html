@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blogs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-black text-white font-sans">
+
+<div class="fixed inset-0 pointer-events-none grid-bg opacity-30"></div>
+
+<header class="sticky top-0 z-40 bg-black/40 backdrop-blur-xl border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between">
+    <a href="index.html" class="font-semibold">Tayyaba Shaikh</a>
+<nav class="flex gap-6 text-sm text-emerald-50/80">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="journey.html">Journey</a>
+        <a href="facts.html">Facts</a>
+        <a href="links.html">Links</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6 py-16">
+
+  <h1 class="text-4xl font-semibold mb-10">Blogs</h1>
+
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <div onclick="openBlog(0)" class="cursor-pointer glass rounded-2xl overflow-hidden border border-white/10 hover:scale-[1.02] transition">
+
+      <img src="bored.png" class="h-48 w-full object-cover">
+
+      <div class="p-6">
+        <h2 class="text-xl font-semibold">Are We Getting Bored More Easily Than Before?</h2>
+        <p class="text-white/60 mt-3">A reflection on attention, boredom, and modern digital habits...</p>
+      </div>
+    </div>
+
+    <div onclick="openBlog(1)" class="cursor-pointer glass rounded-2xl overflow-hidden border border-white/10 hover:scale-[1.02] transition">
+
+      <img src="dis.webp" class="h-48 w-full object-cover">
+
+      <div class="p-6">
+        <h2 class="text-xl font-semibold">Self-Destruct Messages Platform</h2>
+        <p class="text-white/60 mt-3">A small experiment with temporary messaging...</p>
+      </div>
+    </div>
+
+    <div onclick="openBlog(2)" class="cursor-pointer glass rounded-2xl overflow-hidden border border-white/10 hover:scale-[1.02] transition">
+
+      <img src="os.webp" class="h-48 w-full object-cover">
+
+      <div class="p-6">
+        <h2 class="text-xl font-semibold">Tiny Operating System in Browser</h2>
+        <p class="text-white/60 mt-3">Building a desktop-like system using JavaScript...</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div id="modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-xl flex items-center justify-center p-6">
+
+  <div class="glass max-w-4xl w-full max-h-[85vh] overflow-y-auto rounded-2xl p-8 relative border border-white/10">
+
+    <button onclick="closeBlog()" class="absolute top-4 right-4 text-white/70 text-xl">✕</button>
+
+    <div id="content" class="space-y-4 text-white/80 leading-7"></div>
+
+  </div>
+</div>
+
+<script>
+const blogs = [
+  {
+    title: "Are We Getting Bored More Easily Than Before?",
+    image: "bored.png",
+    content: `<p>I don't know if you've noticed this too, but it feels like being bored has become <i>impossible.</i> Okay almost impossible.
+
+A few years ago, sitting around doing nothing wasn't a big deal. If you were waiting for a
+bus, <i>you waited.</i> If you were on a train, maybe you stared out the window or got lost in your
+own thoughts. Boredom wasn't exactly fun, but it felt normal. It was just part of everyday
+life.
+Now? A five-second loading screen feels longer than it should.
+The second there's a pause, most of us reach for our phones without even thinking about it.
+Waiting for an elevator? Phone out. Standing in line for coffee? Phone out. Watching a
+movie? Somehow we're scrolling through something else during the slower scenes.
+What's strange is that this is happening at a time when we're surrounded by more
+entertainment than any generation before us.
+
+Think about it. We have movies, podcasts, music, games, memes, livestreams, YouTube,
+TikTok, Instagram, and about a million other ways to kill time. Almost anything we want is
+available instantly.
+<b>So why do so many people still say they're bored?</b>
+
+Researchers have been looking into this, and one explanation is that digital life has changed
+the way we pay attention. A 2025 review published in Psychonomic Bulletin & Review
+suggested that constantly switching between apps, messages, videos, and notifications may be
+making it harder for people to stay mentally engaged with one thing for very long.
+And honestly, once you notice it in your own life, it's hard to ignore.
+<i>You open YouTube to watch a video.
+A recommendation catches your eye.
+Then another.</i>
+Then somehow it's after midnight and you're watching a stranger reorganize their refrigerator
+while eating snacks you didn't even want an hour ago.
+Your brain was busy the whole time, but afterward you don't necessarily feel entertained. That's the weird part.
+A lot of us are constantly stimulated, but not always genuinely engaged.
+Psychologist <u>Gloria Mark</u>, who studies attention and technology, found that the average
+amount of time people stay focused on one screen before switching has dropped significantly
+over the last couple of decades. In 2004, people stayed on a screen for around two and a half
+minutes. More recent research puts that number at roughly 47 seconds.
+<b>Forty-seven seconds.</b>
+That's barely enough time for the chorus of a song to start.
+Of course, this doesn't mean people suddenly can't focus anymore. Plenty of people can
+spend hours gaming, listening to podcasts, reading about topics they love, or binge-watching
+an entire season in one weekend.
+Maybe the issue isn't that our attention spans are disappearing.
+Maybe we've just become less patient with anything that doesn't grab us immediately.
+<i>That idea actually makes a lot of sense.</i>
+The internet rewards speed. Faster videos. Faster jokes. Faster information. Faster everything.
+Social media especially runs on novelty. Every swipe brings something new. A cooking
+video. A funny story. Breaking news. A travel clip. A cat knocking something off a table.
+Your brain starts expecting that constant stream of newness.
+And when everyday life can't match that level of stimulation, normal moments can suddenly
+feel dull.
+The irony is that endless scrolling doesn't always solve boredom. Sometimes it seems to
+make it worse.
+You know that feeling when you've spent an hour scrolling through videos and somehow feel
+more drained than entertained afterward?
+<i>Not relaxed.
+Not satisfied.</i>
+<b>Just mentally exhausted.</b>
+A lot of people know exactly what that feels like.
+
+Part of the reason may be that the brain seems to enjoy meaningful engagement more than
+constant stimulation. Those aren't the same thing, even though we often treat them like they
+are.
+Maybe that's why reading a book for half an hour feels harder than watching hundreds of
+short videos in the same amount of time. Maybe that's why checking notifications during a
+movie has become so common. Maybe that's why so many people say they're bored while
+actively consuming content.
+We're filling every spare moment, but not always in a way that feels satisfying.
+And you can see it everywhere.
+Friends scrolling while talking to each other.
+People checking their phones at red lights.
+Someone saying "I'm bored" and opening Instagram three seconds later.
+The uncomfortable truth is that modern life leaves very little room for silence.
+And maybe silence matters more than we thought.
+For most of human history, boredom wasn't something to eliminate immediately. It gave
+people time to think, daydream, reflect, and occasionally come up with interesting ideas.
+Some psychologists even argue that creativity depends on those idle moments when the mind
+is allowed to wander.
+Today, boredom rarely gets that chance.
+Before our thoughts can drift anywhere interesting, we reach for another screen.
+Technology itself isn't the villain here. Phones are incredibly useful. The internet can be
+educational, entertaining, and genuinely helpful. Most of us wouldn't want to give it up.
+But it's probably worth asking whether our brains were ever meant to process an endless
+stream of information every waking hour.
+Because eventually, even entertainment can start to feel tiring.
+<i><b>So are we getting bored more easily than before?</b></i>
+Maybe.<br>
+Or maybe we've become so good at escaping boredom that we've forgotten it sometimes
+serves a purpose.</p>
+`
+  },
+
+  {
+    title: "A Platform Where Messages Self-Destruct After a Minute",
+    image: "dis.webp",
+    content: `Have you ever had a thought you just needed to get out of your head, but also didn't want it sitting around forever?
+
+That idea stuck with me for a while, and a lot of platforms inspired me to create this.
+
+So I built a small website where you can write a message, send it, and it disappears after a minute.
+
+No accounts. No history. No <i>"your message has been saved forever somewhere on the internet"</i>
+
+Just a short moment where it exists, and then it's gone.
+
+Why I made it: The idea wasn't anything complicated.
+
+I just liked the thought of a space where you can say something and not worry about it sticking around.
+
+Most platforms are the opposite of that. Everything is permanent. Everything is stored. Even random thoughts from years ago are still sitting somewhere in a database.
+
+So I wanted to try something different. Something a bit lighter.
+
+How it works: You type a message into a box, hit send, and it appears on the screen as a little bubble.
+
+Then a timer starts.
+
+After 60 seconds, the message disappears automatically.
+
+That's it.
+
+<i>It's built using HTML, CSS, and JavaScript. Nothing fancy.</i>
+
+The main thing I had to figure out was handling the timer properly and making sure messages actually get removed from the page without breaking anything.
+
+At one point during testing, I messed it up and messages were disappearing almost instantly. Which technically worked, just not in a very useful way.
+
+What I learned: This was a small project, but I still learned a few things from it.
+
+Even simple ideas get a bit tricky once you start building them.
+
+Something like "just remove a message after 60 seconds" sounds easy, until you actually have to handle multiple messages, timing, and cleanup properly.
+
+I also realized that tiny interactions change how something feels.
+
+A message that stays forever feels different from one that disappears quickly, even if the actual feature is simple.
+
+Try it out!! ^_^
+
+If you want to test it, here it is: <a href="https://notthatslayer.github.io/Venting-Platform/"> Click Here </a>
+
+Lastly, It's a small project, and it's not trying to be anything big.
+Just something I built while experimenting and learning JavaScript a bit more.
+<u>I'll probably look at it later and think of things I could improve, but okay.</u>
+
+<i>For now, it exists for a minute at a time :)</i>`
+  },
+
+  {
+    title: "A Tiny Operating System in the Browser",
+    image: "os.webp",
+    content: `I Built a Tiny Operating System in the Browser (For Absolutely No Practical Reason T-T)
+
+One of my favorite things about learning web development is building things that make me stop and think: "Hold on, can I actually make this?"
+This time, the answer was:<i>"kinda?"</i>
+
+So I built a mini operating system in the browser using JavaScript.
+Not a real operating system, obviously.
+Nobody is installing this on their laptop anytime soon.
+But it does have:
+• A desktop with icons
+• Draggable windows
+• A taskbar
+• A start menu
+• A calculator
+• A notepad with saved notes
+• A paint app
+• A terminal with commands
+• A clock and calendar
+• A fake browser
+• Window controls like minimize, maximize, and close
+<br>
+
+I wanted to see if I could recreate the feeling of using a desktop environment using only front-end development concepts I already knew.
+
+At first it sounded easy.
+Then I started adding windows.
+Then those windows needed to move.
+Then they needed to stay on top of each other correctly.
+Then they needed to minimize.
+Then they needed to show up in the taskbar.
+And suddenly a <i>"small project" became a lot less small -_-"</i>
+
+One thing I enjoyed building was the window management system.
+Every time a window opens, it gets moved to the front. Minimized apps stay in the taskbar. Clicking a taskbar app restores it.
+Nothing revolutionary, but seeing it actually behave like a desktop felt surprisingly satisfying, <p style="text-decoration: line-through;">not gonna lie!</p>
+
+The notepad was another fun addition.
+It saves notes using localStorage, which means whatever you type is still there when you come back later.
+
+The terminal is probably my favorite part though.
+Typing commands like:help, date, time, or even opening apps through commands made the project feel much more like a tiny operating system instead of a collection of random windows.
+
+A lot of it is still simple.
+The browser isn't really a browser.
+The file explorer doesn't manage files.
+The settings page doesn't do much yet(Anything to be precise ;-;)
+<i>But that was never the point.</i>
+
+The goal was to experiment, learn, and see how many desktop-like features I could recreate with JavaScript.
+And honestly, I learned more than I expected while building it.
+
+<b>If you were building something like this, what feature would you add next??</b>
+
+I'd genuinely love some feedback! :))
+
+Project link: <a href="https://notthatslayer.github.io/Mini-OS/">Click ME</a>
+(Please use a PC or laptop to use all the features nicely)`
+  }
+];
+
+function openBlog(i){
+  const blog = blogs[i];
+
+  const container = document.getElementById("content");
+
+  container.innerHTML = `
+    <img src="${blog.image}" class="rounded-xl mb-4">
+
+    <h2 class="text-2xl font-semibold mb-4">${blog.title}</h2>
+
+    ${blog.content.split("\n").map(p =>
+      `<p>${p.trim()}</p>`
+    ).join("")}
+  `;
+
+  document.getElementById("modal").classList.remove("hidden");
+}
+
+function closeBlog(){
+  document.getElementById("modal").classList.add("hidden");
+}
+</script>
+
+</body>
+</html>
