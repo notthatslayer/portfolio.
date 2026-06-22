@@ -21,29 +21,6 @@
               600: '#0f4a32',
               500: '#11b56b'
             }
-          },
-          boxShadow: {
-            glow: '0 0 0 1px rgba(16,185,129,0.18), 0 20px 80px rgba(0,0,0,0.45), 0 0 40px rgba(16,185,129,0.12)'
-          },
-          keyframes: {
-            floaty: {
-              '0%,100%': { transform: 'translateY(0px) translateX(0px)' },
-              '50%': { transform: 'translateY(-12px) translateX(6px)' }
-            },
-            pulseGlow: {
-              '0%,100%': { opacity: '0.55', transform: 'scale(1)' },
-              '50%': { opacity: '0.9', transform: 'scale(1.08)' }
-            },
-            drift: {
-              '0%': { transform: 'translate3d(0,0,0)' },
-              '50%': { transform: 'translate3d(20px,-18px,0)' },
-              '100%': { transform: 'translate3d(0,0,0)' }
-            }
-          },
-          animation: {
-            floaty: 'floaty 7s ease-in-out infinite',
-            pulseGlow: 'pulseGlow 4s ease-in-out infinite',
-            drift: 'drift 12s ease-in-out infinite'
           }
         }
       }
@@ -86,7 +63,7 @@
   </div>
 </header>
 
-<main>
+<main class="min-h-screen">
 
 <section class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
 
@@ -100,7 +77,7 @@
     </h2>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
     <div class="reveal glass rounded-[2rem] p-6 border border-white/8">
       <div class="text-emerald-300 text-sm uppercase tracking-[0.25em]">
